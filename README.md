@@ -25,3 +25,7 @@ This project involves analyzing energy storage data to classify fuel types in re
 ## Conclusion
 
 This analysis provides a comprehensive approach to understanding and classifying fuel types in residential energy storage systems. The use of logistic regression with Lasso regularization helps in focusing on significant features, leading to a robust model with high accuracy.
+
+## Access the Full Report
+
+For more detailed insights and visualizations, access the full report [here](https://gregcrooks75.github.io/Gregcrooks75/DataSociety.html).
