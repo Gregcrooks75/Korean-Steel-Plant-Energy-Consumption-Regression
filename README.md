@@ -1,79 +1,118 @@
-# Energy Consumption Prediction Project
+# Korean Steel Plant Energy Consumption Regression
 
 
 
-## Aim
-
-The objective of this project is to predict **Active Power Consumption (kWh)** in an industrial setting using historical data from the steel industry. Active Power, measured in kWh, represents the usable energy in an AC circuit. Given the importance of `Usage_kWh` as a measure of real power consumption, our analysis focuses primarily on this field.
+This project provides an in-depth analysis and regression model to predict energy consumption in a Korean steel plant. Using Exploratory Data Analysis (EDA) and regression techniques, the project uncovers patterns in energy use, focusing on optimizing energy management strategies.
 
 
 
-### Key Assumptions
-
-- Time-related variables (e.g., weekday, time of day) affect power consumption patterns.
-
-- Power factor fields are useful indicators of energy efficiency, as they highlight the ratio of active power to apparent power in a circuit.
+---
 
 
 
-## Data Preparation
-
-To begin the analysis, data was loaded, cleaned, and formatted:
-
-- **Column Renaming**: Original column names were standardized for readability.
-
-- **Datetime Processing**: The date field was converted to datetime format, and separate columns for day, month, and year were created.
-
-- **Handling Duplicates and Missing Values**: The dataset was checked for duplicates and missing values, with none found.
+## Project Overview
 
 
 
-## Outlier Detection and Transformation
-
-- **Outlier Detection**: Strong skewness and outliers were observed in power factor and reactive power fields.
-
-- **Data Transformation**: Right-skewed variables were transformed using the Interquartile Range (IQR) method to reduce outlier impact, especially for non-normal distributions.
+The analysis is based on a dataset containing variables related to date, time, and energy usage characteristics. It assumes that energy consumption patterns vary based on time and load type, leading to the following steps:
 
 
 
-## Feature Engineering
+### Objectives
 
-Additional features were created to enhance predictive power:
+1. **Identify Key Factors** influencing energy consumption.
 
-- **Holiday Identification**: A dataset of holidays was integrated to analyze consumption patterns on holidays vs. non-holidays.
+2. **Build a Predictive Model** to accurately forecast energy needs.
 
-- **Daily and Previous Day Usage**: Summarized daily usage of active power and created a lag feature to represent previous day’s consumption.
-
-
-
-## Exploratory Data Analysis (EDA)
-
-- **Correlation Analysis**: A heatmap revealed strong collinearity between CO2 and Active Power.
-
-- **Consumption Patterns**: Analyzed consumption by day of the week, week status (weekday vs. weekend), and load type to uncover patterns:
-
-- **Highest Consumption**: Tuesday has the highest average active power consumption, while Sunday has the lowest.
-
-- **Load Types**: Distribution of load types (e.g., light, medium, maximum) was examined to understand energy demand variation.
+3. **Generate Insights** for optimizing energy use.
 
 
 
-## Predictive Modeling
-
-- **Data Splitting**: The dataset was split into training and testing sets.
-
-- **Preprocessing and Scaling**: Numerical features were scaled, and categorical features were encoded.
-
-- **Model Selection**: Various machine learning models, including Linear Regression, were evaluated based on accuracy.
+## Workflow
 
 
 
-## Key Findings
+### 1. Data Preprocessing
 
-- **Day and Time Impact**: Energy consumption varies significantly by day of the week and load type, with higher consumption observed on weekdays.
+- **Data Cleaning**: Removal of duplicates and handling of missing values.
 
-- **Seasonal Trends**: Winter months, especially January, show higher average power consumption, particularly for light loads.
+- **Feature Engineering**: Creation of new features based on date and time data (e.g., extracting day, month, and year).
+
+- **Outlier Detection**: Identification and removal of outliers to ensure model accuracy.
 
 
 
-This project provides valuable insights into industrial energy usage patterns, paving the way for more efficient energy management and targeted predictions of power needs.
+### 2. Exploratory Data Analysis (EDA)
+
+- **Variable Analysis**: Initial analysis of distributions, relationships, and patterns.
+
+- **Correlation Analysis**: Examination of relationships between variables, focusing on the correlation between power consumption and emissions.
+
+- **Temporal Consumption Patterns**: Analysis of power usage across different times and days.
+
+
+
+### 3. Model Training and Evaluation
+
+Three models were trained to predict energy consumption:
+
+- **Linear Regression**: Achieved a high R² score, providing a straightforward and interpretable baseline.
+
+- **Ridge Regression**: Improved robustness against multicollinearity with similar accuracy to Linear Regression.
+
+- **Lasso Regression**: Selected key features by shrinking less important coefficients to zero, providing a simplified model.
+
+
+
+#### Model Evaluation Metrics:
+
+- **R² (Coefficient of Determination)**
+
+- **Mean Absolute Error (MAE)**
+
+- **Root Mean Squared Error (RMSE)**
+
+
+
+### 4. Key Findings
+
+- **Temporal Variations**: Energy consumption patterns varied significantly by time of day and day of the week.
+
+- **Correlation with CO₂ Emissions**: Strong correlation between energy usage and CO₂ emissions.
+
+- **Load Type Distribution**: The majority of usage came from certain load types, providing insights for targeted energy management.
+
+
+
+---
+
+
+
+## Results and Conclusions
+
+
+
+- **Optimal Model**: Linear and Ridge Regression models were most effective for prediction, achieving similar performance.
+
+- **Predictive Insights**: The analysis highlights key patterns in energy consumption, which can support more efficient and sustainable operations.
+
+- **Business Implications**: By understanding consumption drivers, the plant can make informed decisions to manage peak demand, optimize resource allocation, and reduce costs.
+
+
+
+## Files
+
+- `Korean Steel Plant Energy Consumption Regression.ipynb`: Main notebook with code for data processing, analysis, model training, and evaluation.
+
+
+
+## Getting Started
+
+1. Clone the repository.
+
+2. Ensure required libraries are installed.
+
+3. Run the Jupyter Notebook to reproduce the analysis and results.
+
+
+
