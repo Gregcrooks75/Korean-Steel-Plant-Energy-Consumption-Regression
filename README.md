@@ -103,6 +103,8 @@ Three models were trained to predict energy consumption:
 ## Files
 
 - `Korean Steel Plant Energy Consumption Regression.ipynb`: Main notebook with code for data processing, analysis, model training, and evaluation.
+-  <b>Data file 1: </b> https://www.kaggle.com/datasets/csafrit2/steel-industry-energy-consumption
+-  <b>Data file 2: </b> excel file created out of this website: https://www.timeanddate.com/holidays/south-korea/2018
 
 
 
